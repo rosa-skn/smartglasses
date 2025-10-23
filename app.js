@@ -39,7 +39,6 @@ function setupCarousel(root, { autoplayMs = 0, loop = true } = {}) {
 
   let index = 0, timer = null;
 
-  // Dots
   dotsWrap.innerHTML = '';
   const dots = slides.map((_, i) => {
     const b = document.createElement('button');
@@ -62,14 +61,12 @@ function setupCarousel(root, { autoplayMs = 0, loop = true } = {}) {
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
 
-  // Keyboard
   root.tabIndex = 0;
   root.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
     if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
   });
 
-  // Basic drag/swipe
   let startX = 0, dx = 0, dragging = false;
   const threshold = 40;
   track.addEventListener('pointerdown', (e) => {
@@ -93,7 +90,6 @@ function setupCarousel(root, { autoplayMs = 0, loop = true } = {}) {
   track.addEventListener('pointercancel', endDrag);
   track.addEventListener('pointerleave', () => dragging && endDrag());
 
-  // Autoplay
   function startAutoplay() {
     if (autoplayMs > 400) {
       stopAutoplay();
