@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="images/check.png">
+  <title>Optima — Smart Glasses</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: "#ffffff",                 
+          panel: "#ffffff",              
+          border: "#e5e7eb",             
+          gold: {                       
+            DEFAULT: "#bda2be",          
+            deep: "#a889a9"              
+          },
+          text: {
+            base: "#000000",             
+            muted: "#6b7280"             
+          }
+        },
+        boxShadow: {
+          card: "0 6px 24px rgba(0,0,0,.08)",
+          gold: "0 10px 26px rgba(189,162,190,.28)"
+        },
+        borderRadius: { xl2: "14px" }
+      }
+    }
+  };
+</script>
+
+ <style>
+  .shimmer {
+    background: linear-gradient(120deg, #f1f3f5 25%, #eceef1 50%, #f1f3f5 75%);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { to { background-position: 200% 0; } }
+  @font-face {
+  font-family: "Aquavit";
+  src: url("/fonts/Aquavit.woff2") format("woff2"),
+    url("/fonts/Aquavit.woff") format("woff");
+
+  font-display: swap;
+}
+</style>
+</head>
+<body class="min-h-screen bg-bg text-text-base antialiased">
+
+  <nav class="sticky top-0 z-50 backdrop-blur border-b border-border/80 bg-bg/70">
+    <div class="max-w-6xl mx-auto px-3 sm:px-4">
+      <div class="flex items-center justify-between h-12 py-3">
+<a href="/" aria-label="Logo">
+  <img src="images/optima.png" alt="Optima" class="h-28 w-auto" />
+</a>
+    <div class="flex items-center gap-4 text-text-muted text-sm">
+          <a href="#features" class="hover:text-text-base">Features</a>
+          <a href="#specs" class="hover:text-text-base">Specs</a>
+          <a href="#buy" class="hover:text-text-base">Buy</a>
+          <a href="#faq" class="hover:text-text-base">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-center">
+      <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+        <p class="uppercase tracking-[0.18em] text-[12px] text-gold">Limited to one timeless model</p>
+        <h1 class="mt-2 text-4xl sm:text-6xl font-semibold leading-tight">Smart glasses, refined.</h1>
+        <p class="mt-3 text-text-muted">A single, meticulously crafted pair—built for clarity, comfort, and effortless everyday brilliance.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#buy"
+          class="inline-flex items-center rounded-full bg-[#bda2be] text-black font-semibold px-5 py-3 shadow hover:-translate-y-0.5 hover:bg-[#a889a9] transition focus:outline-none focus:ring-2 focus:ring-[#bda2be]/50">
+          Pre‑order now
+          </a>
+          <a href="#features"
+             class="inline-flex items-center rounded-full border border-border text-text-base px-5 py-3 hover:border-gold hover:text-gold transition">
+            Explore features
+          </a>
+        </div>
+      </div>
+  
+     <section id="carousel" class="relative w-full max-w-6xl mx-auto" role="region" aria-label="Image carousel">
+  <div class="relative overflow-hidden">
+    <div class="flex transition-transform duration-500 will-change-transform" data-track>
+      <div class="w-full shrink-0 px-2">
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+          <div class="rounded-xl2 p-4 bg-panel border border-border shadow-card">
+            <img src="images/glasses.jpg" alt="Optima Smart Glasses"
+                 class="block w-full h-auto mb-4 rounded-lg shadow-gold" loading="eager" />
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 px-2">
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+          <div class="rounded-xl2 p-4 bg-panel border border-border shadow-card">
+            <img src="images/glasses1.jpg" alt="Optima Smart Glasses"
+                 class="block w-full h-auto mb-4 rounded-lg shadow-gold" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 px-2">
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+          <div class="rounded-xl2 p-4 bg-panel border border-border shadow-card">
+            <img src="images/glasses5.jpg" alt="Optima Smart Glasses"
+                 class="block w-full h-auto mb-4 rounded-lg shadow-gold" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="w-full shrink-0 px-2">
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+          <div class="rounded-xl2 p-4 bg-panel border border-border shadow-card">
+            <img src="images/glasses6.jpg" alt="Optima Smart Glasses"
+                 class="block w-full h-auto mb-4 rounded-lg shadow-gold" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" data-prev
+          class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow"
+          aria-label="Previous slide">‹</button>
+  <button type="button" data-next
+          class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow"
+          aria-label="Next slide">›</button>
+
+  <!-- Dots -->
+  <div class="mt-3 flex justify-center gap-2" data-dots></div>
+</section>
+
+    </div>
+  </header>
+
+  <section id="features" class="py-12 border-t border-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 data-reveal class="opacity-0 translate-y-2 transition duration-700 text-2xl sm:text-3xl font-semibold">Why you’ll love them</h2>
+
+      <div class="mt-4 grid gap-4 md:grid-cols-3">
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700 rounded-xl2 p-5 bg-panel border border-border shadow-card hover:-translate-y-0.5 hover:border-gold/50">
+          <div class="flex items-center gap-2">
+            <strong>Elegant by design</strong>
+          </div>
+          <p class="mt-2 text-text-muted">Lightweight frame, balanced fit, and a finish that whispers luxury—never loud.</p>
+        </div>
+
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700 rounded-xl2 p-5 bg-panel border border-border shadow-card hover:-translate-y-0.5 hover:border-gold/50">
+          <div class="flex items-center gap-2">
+            <strong>See more, do more</strong>
+          </div>
+          <p class="mt-2 text-text-muted">Glanceable HUD for essentials—time, directions, and notifications that stay out of your way.</p>
+        </div>
+
+        <div data-reveal class="opacity-0 translate-y-2 transition duration-700 rounded-xl2 p-5 bg-panel border border-border shadow-card hover:-translate-y-0.5 hover:border-gold/50">
+          <div class="flex items-center gap-2">
+            <strong>All‑day comfort</strong>
+          </div>
+          <p class="mt-2 text-text-muted">Battery life tuned for daily flow, with smart power saving when you don’t need the screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="specs" class="py-12 border-t border-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-6 items-center">
+      <div data-reveal class="opacity-0 translate-y-2 transition duration-700 rounded-xl2 p-4 bg-panel border border-border shadow-card">
+<video  autoplay muted loop playsinline controls width="800">
+  <source src="images/360.mp4" type="video/mp4">
+</video>
+      </div>
+
+      <div data-reveal class="opacity-0 translate-y-2 transition duration-700">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Craft, meet clarity</h2>
+        <p class="mt-2 text-text-muted">Premium materials, precise optics, and audio that keeps conversations close and personal.</p>
+
+        <div class="mt-4 grid gap-3">
+          <div class="flex justify-between gap-3 rounded-xl bg-[#ffffff] border border-border px-4 py-3">
+            <span class="text-text-muted">Display</span><span class="font-semibold">Micro‑OLED HUD</span>
+          </div>
+          <div class="flex justify-between gap-3 rounded-xl bg-[#ffffff] border border-border px-4 py-3">
+            <span class="text-text-muted">Audio</span><span class="font-semibold">Open‑ear, beamformed</span>
+          </div>
+          <div class="flex justify-between gap-3 rounded-xl bg-[#ffffff] border border-border px-4 py-3">
+            <span class="text-text-muted">Weight</span><span class="font-semibold">Under 45 g</span>
+          </div>
+          <div class="flex justify-between gap-3 rounded-xl bg-[#ffffff] border border-border px-4 py-3">
+            <span class="text-text-muted">Battery</span><span class="font-semibold">All‑day typical use</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="buy" class="py-12 border-t border-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div data-reveal class="opacity-0 translate-y-2 transition duration-700 text-center rounded-xl2 border border-border bg-gradient-to-b from-[#bda2be] to-bg p-8 shadow-card">
+        <p class="uppercase tracking-[0.18em] text-[12px] text-black">Pre‑order</p>
+        <p class="mt-1 text-4xl sm:text-5xl font-bold text-black">€399</p>        <p class="mt-2 text-text-muted">One model. Multiple finishes. Ships with charging cable and case.</p>
+        <div class="mt-6 flex justify-center gap-3">
+          <button id="buyBtn"
+                  class="inline-flex items-center rounded-full bg-[#bda2be] text-black font-semibold px-5 py-3 shadow hover:-translate-y-0.5 hover:bg-[#a889a9] transition focus:outline-none focus:ring-2 focus:ring-[#bda2be]/50">
+            Reserve yours
+          </button>
+          <a href="#faq"
+             class="rounded-full border border-border text-text-base px-6 py-3 hover:border-gold hover:text-gold transition">
+            Questions?
+          </a>
+        </div>
+        <p class="mt-3 text-xs text-text-muted">Secure checkout. 30‑day return after delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-12 border-t border-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 data-reveal class="opacity-0 translate-y-2 transition duration-700 text-2xl sm:text-3xl font-semibold">FAQ</h2>
+
+      <details data-reveal class="opacity-0 translate-y-2 transition duration-700 mt-4 rounded-xl border border-border bg-panel p-4">
+        <summary class="cursor-pointer font-semibold">When will pre‑orders ship?</summary>
+        <p class="mt-2 text-text-muted">Estimated shipping begins in Q1 next year. You’ll receive updates by email after purchase.</p>
+      </details>
+
+      <details data-reveal class="opacity-0 translate-y-2 transition duration-700 mt-3 rounded-xl border border-border bg-panel p-4">
+        <summary class="cursor-pointer font-semibold">Can I add my prescription?</summary>
+        <p class="mt-2 text-text-muted">Yes, the frame supports standard lens fitting. We’ll share details with your optician post‑purchase.</p>
+      </details>
+
+      <details data-reveal class="opacity-0 translate-y-2 transition duration-700 mt-3 rounded-xl border border-border bg-panel p-4">
+        <summary class="cursor-pointer font-semibold">Is my data private?</summary>
+        <p class="mt-2 text-text-muted">Absolutely. On‑device processing for core features, with clear controls for anything shared.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-border text-text-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 gap-4">
+      <div>
+        <div class="tracking-widest text-sm text-text-base font-semibold">Optima</div>
+        <p class="text-xs">© <span id="year"></span> Optima Technologies. All rights reserved.</p>
+      </div>
+      <p class="text-xs">By pre‑ordering, you agree to our terms and privacy policy. You can cancel anytime before shipping.</p>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+
+  <style>
+    @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+  </style>
+</body>
+</html>
